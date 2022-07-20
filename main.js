@@ -99,7 +99,7 @@ for (let x = 0; x < posts.length; x++) {
                                             </a>
                                         </div>
                                         <div class="likes__counter">
-                                            Piace a <b id="like-counter-1" class="js-likes-counter">${posts[x].likes}</b> persone
+                                            Piace a <b id="like-counter-${x}" class="js-likes-counter">${posts[x].likes}</b> persone
                                         </div>
                                     </div> 
                                 </div>            
@@ -115,6 +115,7 @@ for (let x = 0; x < posts.length; x++) {
 // richiamo il bottone 'mi piace', ottenendo un array
 const likeBtn = document.getElementsByClassName('like-button');
 
+let likesIncrease; // variabile per incremento likes
 
 // tramite un ciclo scorro l'array dei bottoni 'mi piace' e ad ognugno aggiungo un evento al click
 for (let y = 0; y < likeBtn.length; y++) {
@@ -122,9 +123,15 @@ for (let y = 0; y < likeBtn.length; y++) {
     likeBtn[y].addEventListener('click', function(event) {
 
         event.preventDefault(); // prevenire, al click, il funzionamento del tag <a>
-        likeBtn[y].style.color = '#48cae4'; // cambio colore al 'mi piace'
-
+        likeBtn[y].style.color = '#48cae4'; // cambio colore al 'mi piace' cliccato
         
+        // incremento i like
+        likesIncrease = posts[y].likes;
+        likesIncrease += 1;
+        document.getElementById(`like-counter-${y}`).innerHTML = likesIncrease;
+
     });
 
 };
+
+// se DOM id like-counter-1, in posizione y, è diverso da quanto scritto nell'oggetto, ALLORA pusho il suo postid nel secondo array
