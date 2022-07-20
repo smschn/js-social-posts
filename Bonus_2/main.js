@@ -80,6 +80,7 @@ for (let x = 0; x < posts.length; x++) {
     posts[x].created = newDateShort;
     console.log(posts[x].created) // debug
 
+
     // milestone_1 e m_2:
     containerDom.innerHTML += `<div class="post">
                                 <div class="post__header">
@@ -147,6 +148,16 @@ for (let y = 0; y < likeBtn.length; y++) {
     });
 
 };
+
+
+
+// bonus_3 logica
+let prova = posts[3].author.name;
+console.log(prova);
+let prova2 = prova.substring(0,1);
+console.log(prova2);
+let prova3 = prova.substring(5,6);
+console.log(prova3);
 
 
 
