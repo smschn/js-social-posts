@@ -166,12 +166,13 @@ for (let x = 0; x < posts.length; x++) {
 
 
 
-// --- fine milestone_1 e m_2, inizio milestone_3 e bonus_3
+// --- fine milestone_1 e m_2
+// --- inizio milestone_3 e bonus_3
 
 
 
 const likeBtn = document.getElementsByClassName('like-button'); // richiamo il bottone 'mi piace', ottenendo un array
-let likesIncrease; // variabile per incremento likes
+let likesIncrease; // variabile-contatore per incremento likes
 const arrayIdPostLiked = [] // array vuoto da riempire con id dei post a cui è stato messo il 'mi piace'
 
 let alreadyClicked = false; // bonus_3: variabile per controllare se ho già cliccato o meno
@@ -200,14 +201,14 @@ for (let y = 0; y < likeBtn.length; y++) {
 
             // cambio il booleano della variabile per non entrare più in questo if (avendo già cliccato)
             alreadyClicked = true;
-            console.log(alreadyClicked)
+            console.log(alreadyClicked) // debug
 
-        //
+        // bonus_3: se ho già cliccato il bottone, reimposto colore e decremento il contatore
         } else if (alreadyClicked == true) {
 
             event.preventDefault(); // prevenire, al click, il funzionamento del tag <a>
 
-            likeBtn[y].style.color = '#404040'; // cambio colore al 'mi piace' cliccato
+            likeBtn[y].style.color = '#404040'; // reimposto il colore del 'mi piace'
             
             // decremento i like
             likesIncrease -= 1;
