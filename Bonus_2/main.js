@@ -190,9 +190,11 @@ for (let y = 0; y < likeBtn.length; y++) {
         likesIncrease += 1;
         document.getElementById(`like-counter-${y}`).innerHTML = likesIncrease;
 
-        // pusho l'id del post nel nuovo array
-        arrayIdPostLiked.push(idPostLiked);
-        console.log(arrayIdPostLiked); // debug
+        // pusho l'id del post solo se non c'è già nell'array
+        if (!arrayIdPostLiked.includes(idPostLiked)) {
+            arrayIdPostLiked.push(idPostLiked);
+            console.log(arrayIdPostLiked); // debug
+        }
 
     });
 
