@@ -140,3 +140,20 @@ for (let y = 0; y < likeBtn.length; y++) {
     });
 
 };
+
+
+
+// --- fine milestone_3, inizio bonus_1
+
+
+
+// logica di trasformazione della data
+let oldDate = posts[0].created;
+console.log(oldDate);
+let oldDateSplitted = oldDate.split('-');
+console.log(oldDateSplitted);
+let oldDateSplittedAndReversed = oldDateSplitted.reverse();
+console.log(oldDateSplittedAndReversed);
+let newDate = oldDateSplitted.join('/');
+console.log(newDate);
+
