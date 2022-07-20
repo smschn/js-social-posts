@@ -74,6 +74,7 @@ const containerDom = document.getElementById('container');
 // attraverso un ciclo, creo i post con le variabili che cambiano
 for (let x = 0; x < posts.length; x++) {
 
+    // milestone_1 e m_2:
     containerDom.innerHTML += `<div class="post">
                                 <div class="post__header">
                                     <div class="post-meta">                    
@@ -139,13 +140,14 @@ for (let y = 0; y < likeBtn.length; y++) {
 
     });
 
+
+
+
 };
 
 
 
 // --- fine milestone_3, inizio bonus_1
-
-
 
 // logica di trasformazione della data
 let oldDate = posts[0].created;
@@ -157,3 +159,6 @@ console.log(oldDateSplittedAndReversed);
 let newDate = oldDateSplitted.join('/');
 console.log(newDate);
 
+// logica in un unico passaggio
+let newDateShort = posts[0].created.split('-').reverse().join('/');
+console.log(newDateShort);
