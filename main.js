@@ -115,13 +115,16 @@ for (let x = 0; x < posts.length; x++) {
 // richiamo il bottone 'mi piace', ottenendo un array
 const likeBtn = document.getElementsByClassName('like-button');
 
-// tramite un ciclo scorro l'array dei bottoni 'mi piace' e ad ognugno aggiungo un evento al click con un preventDefault()
+
+// tramite un ciclo scorro l'array dei bottoni 'mi piace' e ad ognugno aggiungo un evento al click
 for (let y = 0; y < likeBtn.length; y++) {
 
     likeBtn[y].addEventListener('click', function(event) {
 
-        event.preventDefault();
+        event.preventDefault(); // prevenire, al click, il funzionamento del tag <a>
+        likeBtn[y].style.color = '#48cae4'; // cambio colore al 'mi piace'
 
+        
     });
 
 };
