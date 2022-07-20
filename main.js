@@ -71,7 +71,7 @@ const posts = [
 // richiamo il container
 const containerDom = document.getElementById('container');
 
-// attraverso un ciclo, creo i post
+// attraverso un ciclo, creo i post con le variabili che cambiano
 for (let x = 0; x < posts.length; x++) {
 
     containerDom.innerHTML += `<div class="post">
@@ -106,3 +106,22 @@ for (let x = 0; x < posts.length; x++) {
                             </div>`
 
 }
+
+
+
+// --- fine milestone_1 e m_2, inizio milestone_3
+
+
+// richiamo il bottone 'mi piace', ottenendo un array
+const likeBtn = document.getElementsByClassName('like-button');
+
+// tramite un ciclo scorro l'array dei bottoni 'mi piace' e ad ognugno aggiungo un evento al click con un preventDefault()
+for (let y = 0; y < likeBtn.length; y++) {
+
+    likeBtn[y].addEventListener('click', function(event) {
+
+        event.preventDefault();
+
+    });
+
+};
