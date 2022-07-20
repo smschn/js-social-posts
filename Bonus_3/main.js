@@ -195,9 +195,11 @@ for (let y = 0; y < likeBtn.length; y++) {
             likesIncrease += 1;
             document.getElementById(`like-counter-${y}`).innerHTML = likesIncrease;
 
-            // pusho l'id del post nel nuovo array
-            arrayIdPostLiked.push(idPostLiked);
-            console.log(arrayIdPostLiked); // debug
+            // pusho l'id del post nel nuovo array solo una volta per like
+            if (!arrayIdPostLiked.includes(idPostLiked)) {
+                arrayIdPostLiked.push(idPostLiked);
+                console.log(arrayIdPostLiked); // debug
+            }
 
             // cambio il booleano della variabile per non entrare più in questo if (avendo già cliccato)
             alreadyClicked = true;
