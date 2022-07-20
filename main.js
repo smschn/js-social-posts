@@ -2,7 +2,7 @@ const posts = [
 
     {
         "id": 1,
-        "content": "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
+        "content": "Phil libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
         "media": "https://unsplash.it/600/300?image=171",
         "author": {
             "name": "Phil Mangione",
@@ -14,7 +14,7 @@ const posts = [
 
     {
         "id": 2,
-        "content": "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
+        "content": "Sofia libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
         "media": "https://unsplash.it/600/400?image=112",
         "author": {
             "name": "Sofia Perlari",
@@ -26,7 +26,7 @@ const posts = [
 
     {
         "id": 3,
-        "content": "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
+        "content": "Chiara libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
         "media": "https://unsplash.it/600/400?image=234",
         "author": {
             "name": "Chiara Passaro",
@@ -38,7 +38,7 @@ const posts = [
 
     {
         "id": 4,
-        "content": "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
+        "content": "Luca libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
         "media": "https://unsplash.it/600/400?image=24",
         "author": {
             "name": "Luca Formicola",
@@ -50,7 +50,7 @@ const posts = [
 
     {
         "id": 5,
-        "content": "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
+        "content": "Alessandro libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
         "media": "https://unsplash.it/600/400?image=534",
         "author": {
             "name": "Alessandro Sainato",
@@ -64,7 +64,7 @@ const posts = [
 
 
 
-// --- inizio milestone 1
+// --- inizio milestone_1, milestone_2
 
 
 
@@ -78,32 +78,31 @@ for (let x = 0; x < posts.length; x++) {
                                 <div class="post__header">
                                     <div class="post-meta">                    
                                         <div class="post-meta__icon">
-                                            <img class="profile-pic" src="https://unsplash.it/300/300?image=15" alt="Phil Mangione">                    
+                                            <img class="profile-pic" src="${posts[x].author.image}" alt="Phil Mangione">                    
                                         </div>
                                         <div class="post-meta__data">
-                                            <div class="post-meta__author">Phil Mangione</div>
-                                            <div class="post-meta__time">4 mesi fa</div>
+                                            <div class="post-meta__author">${posts[x].author['name']}</div>
+                                            <div class="post-meta__time">${posts[x].created}</div>
                                         </div>                    
                                     </div>
                                 </div>
-                                <div class="post__text">Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.</div>
+                                <div class="post__text">${posts[x].content}</div>
                                 <div class="post__image">
-                                    <img src="https://unsplash.it/600/300?image=171" alt="">
+                                    <img src="${posts[x]['media']}" alt="">
                                 </div>
                                 <div class="post__footer">
                                     <div class="likes js-likes">
                                         <div class="likes__cta">
-                                            <a class="like-button  js-like-button" href="#" data-postid="1">
+                                            <a class="like-button  js-like-button" href="#" data-postid="${posts[x].id}">
                                                 <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
                                                 <span class="like-button__label">Mi Piace</span>
                                             </a>
                                         </div>
                                         <div class="likes__counter">
-                                            Piace a <b id="like-counter-1" class="js-likes-counter">80</b> persone
+                                            Piace a <b id="like-counter-1" class="js-likes-counter">${posts[x].likes}</b> persone
                                         </div>
                                     </div> 
                                 </div>            
                             </div>`
-
 
 }
