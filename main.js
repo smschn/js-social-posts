@@ -120,7 +120,7 @@ const arrayIdPostLiked = [] // array vuoto da riempire con id dei post a cui è 
 // tramite un ciclo scorro l'array dei bottoni 'mi piace' e ad ognugno aggiungo un evento al click
 for (let y = 0; y < likeBtn.length; y++) {
 
-    let idPostLiked = likeBtn[y].getAttribute('data-postid'); // variabile che richiama il contenuto dell'attributo data-postid
+    let idPostLiked = likeBtn[y].getAttribute('data-postid'); // variabile cui assegno il contenuto dell'attributo data-postid di 'likeBtn[y-esimo]' (quello cliccato)
 
     likeBtn[y].addEventListener('click', function(event) {
 
