@@ -145,20 +145,28 @@ for (let y = 0; y < likeBtn.length; y++) {
 
 };
 
-
-
-// --- fine milestone_3, inizio bonus_1
+/*
 
 // logica di trasformazione della data
+
+// creo variabile cui assegno la data americana
 let oldDate = posts[0].created;
 console.log(oldDate);
+
+// creo variabile cui assegno la data americana splittata (sarà un array)
 let oldDateSplitted = oldDate.split('-');
 console.log(oldDateSplitted);
+
+// creo variabile cui assegno la data american splittata e con ordine invertito (è sempre un array)
 let oldDateSplittedAndReversed = oldDateSplitted.reverse();
 console.log(oldDateSplittedAndReversed);
+
+// creo variabile cui assegno l'unione dei vari elementi dell'array, uniti ma separati da '/'
 let newDate = oldDateSplitted.join('/');
 console.log(newDate);
 
-// logica in un unico passaggio
+// quanto sopra, ma in un unico passaggio
 let newDateShort = posts[0].created.split('-').reverse().join('/');
 console.log(newDateShort);
+
+*/
