@@ -112,17 +112,20 @@ for (let x = 0; x < posts.length; x++) {
 // --- fine milestone_1 e m_2, inizio milestone_3
 
 
-// richiamo il bottone 'mi piace', ottenendo un array
-const likeBtn = document.getElementsByClassName('like-button');
 
+const likeBtn = document.getElementsByClassName('like-button'); // richiamo il bottone 'mi piace', ottenendo un array
 let likesIncrease; // variabile per incremento likes
+const arrayIdPostLiked = [] // array vuoto da riempire con id dei post a cui è stato messo il 'mi piace'
 
 // tramite un ciclo scorro l'array dei bottoni 'mi piace' e ad ognugno aggiungo un evento al click
 for (let y = 0; y < likeBtn.length; y++) {
 
+    let idPostLiked = likeBtn[y].getAttribute('data-postid'); // variabile che richiama il contenuto dell'attributo data-postid
+
     likeBtn[y].addEventListener('click', function(event) {
 
         event.preventDefault(); // prevenire, al click, il funzionamento del tag <a>
+
         likeBtn[y].style.color = '#48cae4'; // cambio colore al 'mi piace' cliccato
         
         // incremento i like
@@ -130,8 +133,12 @@ for (let y = 0; y < likeBtn.length; y++) {
         likesIncrease += 1;
         document.getElementById(`like-counter-${y}`).innerHTML = likesIncrease;
 
+        // pusho l'id del post nel nuovo array
+        arrayIdPostLiked.push(idPostLiked);
+        console.log(arrayIdPostLiked);
+        
     });
 
 };
 
-// se DOM id like-counter-1, in posizione y, è diverso da quanto scritto nell'oggetto, ALLORA pusho il suo postid nel secondo array
+// se DOM id like-counter-1, in posizione y, è diverso da quanto scritto nell'oggetto, ALLORA pusho il suo postid nel secondo array*/
