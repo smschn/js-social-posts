@@ -145,6 +145,9 @@ for (let y = 0; y < likeBtn.length; y++) {
 
 };
 
+
+
+
 /*
 
 // logica di trasformazione della data
@@ -161,11 +164,13 @@ console.log(oldDateSplitted);
 let oldDateSplittedAndReversed = oldDateSplitted.reverse();
 console.log(oldDateSplittedAndReversed);
 
-// creo variabile cui assegno l'unione dei vari elementi dell'array, uniti ma separati da '/'
+// creo variabile cui assegno l'unione dei vari elementi dell'array, uniti ma separati da '/' (non è più un array)
 let newDate = oldDateSplitted.join('/');
 console.log(newDate);
 
-// quanto sopra, ma in un unico passaggio
+// ---
+
+// quanto fatto sopra, ma in un unico passaggio
 let newDateShort = posts[0].created.split('-').reverse().join('/');
 console.log(newDateShort);
 
