@@ -64,7 +64,7 @@ const posts = [
 
 
 
-// --- inizio milestone_1, milestone_2
+// --- inizio milestone_1, milestone_2, bonus_1
 
 
 
@@ -73,6 +73,12 @@ const containerDom = document.getElementById('container');
 
 // attraverso un ciclo, creo i post con le variabili che cambiano
 for (let x = 0; x < posts.length; x++) {
+    
+    // bonus_1: cambio la data prima che venga stampata nella pagina
+    let newDateShort = posts[x].created.split('-').reverse().join('/');
+    console.log(newDateShort); // debug
+    posts[x].created = newDateShort;
+    console.log(posts[x].created) // debug
 
     // milestone_1 e m_2:
     containerDom.innerHTML += `<div class="post">
@@ -140,11 +146,7 @@ for (let y = 0; y < likeBtn.length; y++) {
 
     });
 
-
-
-
 };
-
 
 
 
