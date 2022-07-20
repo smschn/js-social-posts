@@ -128,17 +128,15 @@ for (let y = 0; y < likeBtn.length; y++) {
 
         likeBtn[y].style.color = '#48cae4'; // cambio colore al 'mi piace' cliccato
         
-        // incremento i like
+        // incremento i like nell'html
         likesIncrease = posts[y].likes;
         likesIncrease += 1;
         document.getElementById(`like-counter-${y}`).innerHTML = likesIncrease;
 
         // pusho l'id del post nel nuovo array
         arrayIdPostLiked.push(idPostLiked);
-        console.log(arrayIdPostLiked);
-        
+        console.log(arrayIdPostLiked); // debug
+
     });
 
 };
-
-// se DOM id like-counter-1, in posizione y, è diverso da quanto scritto nell'oggetto, ALLORA pusho il suo postid nel secondo array*/
