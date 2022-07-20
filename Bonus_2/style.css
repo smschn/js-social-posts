@@ -123,3 +123,11 @@ h1 {
     color: #0CD977;
     cursor: default;
 }
+
+/* regola css per le iniziali del nome*/
+
+.two_letters {
+    background-color: #023047;
+    padding: 16px;
+    color: #fff;
+}

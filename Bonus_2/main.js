@@ -64,9 +64,9 @@ const posts = [
 
 
 
-// --- inizio milestone_1, milestone_2, bonus_1
+// --- inizio milestone_1, milestone_2, bonus_1, bonus_2
 
-
+let firstLetters;
 
 // richiamo il container
 const containerDom = document.getElementById('container');
@@ -80,38 +80,87 @@ for (let x = 0; x < posts.length; x++) {
     posts[x].created = newDateShort;
     console.log(posts[x].created) // debug
 
+    // entro nell'if per il bonus_2
+    if (posts[x].author.image == null) {
+     
+        // segue tutto il bonus_2
+        console.log(x, 'check_1'); // debug
 
-    // milestone_1 e m_2:
-    containerDom.innerHTML += `<div class="post">
-                                <div class="post__header">
-                                    <div class="post-meta">                    
-                                        <div class="post-meta__icon">
-                                            <img class="profile-pic" src="${posts[x].author.image}" alt="Phil Mangione">                    
+        // sostituisco l'immagine 'null' con le iniziali del nome
+        let authorNameNoImage = posts[x].author.name;
+        console.log(posts[x].author.name, 'check_2'); // debug
+        let firstLetters = authorNameNoImage.substring(0,1) + ' ' + authorNameNoImage.substring(5,6);
+        console.log(firstLetters, 'check_3'); // debug
+        posts[x].author.image = firstLetters;
+        console.log(posts[x].author.image, 'check_4'); // debug
+
+        // inserisco il contenuto con il codice html dell'immagine profilo cambiato
+        containerDom.innerHTML += `<div class="post">
+                                        <div class="post__header">
+                                            <div class="post-meta">                    
+                                                <div class="post-meta__icon">
+                                                    <div class='profile-pic two_letters'>${posts[x].author.image}</div>
+                                                </div>
+                                                <div class="post-meta__data">
+                                                    <div class="post-meta__author">${posts[x].author['name']}</div>
+                                                    <div class="post-meta__time">${posts[x].created}</div>
+                                                </div>                    
+                                            </div>
                                         </div>
-                                        <div class="post-meta__data">
-                                            <div class="post-meta__author">${posts[x].author['name']}</div>
-                                            <div class="post-meta__time">${posts[x].created}</div>
-                                        </div>                    
+                                        <div class="post__text">${posts[x].content}</div>
+                                        <div class="post__image">
+                                            <img src="${posts[x]['media']}" alt="">
+                                        </div>
+                                        <div class="post__footer">
+                                            <div class="likes js-likes">
+                                                <div class="likes__cta">
+                                                    <a class="like-button  js-like-button" href="#" data-postid="${posts[x].id}">
+                                                        <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
+                                                        <span class="like-button__label">Mi Piace</span>
+                                                    </a>
+                                                </div>
+                                                <div class="likes__counter">
+                                                    Piace a <b id="like-counter-${x}" class="js-likes-counter">${posts[x].likes}</b> persone
+                                                </div>
+                                            </div> 
+                                        </div>            
+                                    </div>`
+
+    } else {
+
+        // milestone_1 e m_2:
+        containerDom.innerHTML += `<div class="post">
+                                    <div class="post__header">
+                                        <div class="post-meta">                    
+                                            <div class="post-meta__icon">
+                                                <img class="profile-pic" src="${posts[x].author.image}" alt="Phil Mangione">                    
+                                            </div>
+                                            <div class="post-meta__data">
+                                                <div class="post-meta__author">${posts[x].author['name']}</div>
+                                                <div class="post-meta__time">${posts[x].created}</div>
+                                            </div>                    
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="post__text">${posts[x].content}</div>
-                                <div class="post__image">
-                                    <img src="${posts[x]['media']}" alt="">
-                                </div>
-                                <div class="post__footer">
-                                    <div class="likes js-likes">
-                                        <div class="likes__cta">
-                                            <a class="like-button  js-like-button" href="#" data-postid="${posts[x].id}">
-                                                <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
-                                                <span class="like-button__label">Mi Piace</span>
-                                            </a>
-                                        </div>
-                                        <div class="likes__counter">
-                                            Piace a <b id="like-counter-${x}" class="js-likes-counter">${posts[x].likes}</b> persone
-                                        </div>
-                                    </div> 
-                                </div>            
-                            </div>`
+                                    <div class="post__text">${posts[x].content}</div>
+                                    <div class="post__image">
+                                        <img src="${posts[x]['media']}" alt="">
+                                    </div>
+                                    <div class="post__footer">
+                                        <div class="likes js-likes">
+                                            <div class="likes__cta">
+                                                <a class="like-button  js-like-button" href="#" data-postid="${posts[x].id}">
+                                                    <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
+                                                    <span class="like-button__label">Mi Piace</span>
+                                                </a>
+                                            </div>
+                                            <div class="likes__counter">
+                                                Piace a <b id="like-counter-${x}" class="js-likes-counter">${posts[x].likes}</b> persone
+                                            </div>
+                                        </div> 
+                                    </div>            
+                                </div>`
+
+    }
 
 }
 
@@ -148,16 +197,6 @@ for (let y = 0; y < likeBtn.length; y++) {
     });
 
 };
-
-
-
-// bonus_3 logica
-let prova = posts[3].author.name;
-console.log(prova);
-let prova2 = prova.substring(0,1);
-console.log(prova2);
-let prova3 = prova.substring(5,6);
-console.log(prova3);
 
 
 
